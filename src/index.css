@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Hide browser's default search input clear button */
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-input::-ms-clear {
+  display: none;
+}
+
+/* Firefox */
+.search-input[type="search"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Hide datalist dropdown arrow/indicator */
+.search-input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-input::-webkit-list-button {
+  display: none !important;
+}
+
+/* Alternative approach - remove datalist behavior entirely on hover */
+.search-input:hover::-webkit-calendar-picker-indicator,
+.search-input:focus::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0;
+}
+
+/* Nuclear option - disable all webkit input decorations */
+.search-input {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.search-input::-webkit-textfield-decoration-container {
+  display: none !important;
+}
